@@ -22,6 +22,10 @@ kitchen test
 See documenation for the preqrequisite tools for more detail.
 
 
+## Writing tests
+
+See Test Kitchen documentation (http://kitchen.ci/docs/getting-started/writing-test)
+
 ## Caveats
 
 * Only contains tests for Ubuntu LX zones currently.
