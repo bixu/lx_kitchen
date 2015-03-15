@@ -5,7 +5,7 @@
   [ "$status" -eq 0 ]
 }
 
-@test "htop works" {
+@test "htop executes" {
   run htop --version
   [ "$status" -eq 0 ]
 }
