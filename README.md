@@ -29,6 +29,7 @@ See Test Kitchen documentation (http://kitchen.ci/docs/getting-started/writing-t
 ## Caveats
 
 * Only contains tests for Ubuntu LX zones currently.
+* Because LX zones are by nature much fatter than SmartOS zones and have to be downloaded for every test run, you'll want a pretty fast internet connection to facilitate faster testing. 
 
 ## Contributing
 
