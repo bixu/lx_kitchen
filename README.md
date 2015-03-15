@@ -6,7 +6,7 @@ Test SmartOS LX zones using Vagrant and Test Kitchen.
 ## Prerequisites
 
 * Vagrant (https://www.vagrantup.com/downloads.html)
-* The vagrant-smartos-zones plugin, test-kitchen gem and kitchen-vagrant plugin:
+* The `vagrant-smartos-zones` plugin, `test-kitchen` gem and `kitchen-vagrant` plugin:
 ```
 vagrant plugin install vagrant-smartos-zones
 gem install test-kitchen
