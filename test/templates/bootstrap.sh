@@ -36,6 +36,7 @@ symlink_ruby() {
   local gem=$(local_gem)
   ln -s ${ruby} /opt/chef/embedded/bin/ruby
   ln -s ${gem} /opt/chef/embedded/bin/gem
+  ln -s ${ruby} /home/vagrant/ruby
 }
 
 local_ruby() {
