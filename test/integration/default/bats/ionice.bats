@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
 @test "ionice executes" {
-  run ionice --version
+  run ionice
   [ "$status" -eq 0 ]
 }
