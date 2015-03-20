@@ -16,9 +16,9 @@ Vagrant.configure('2') do |config|
   config.global_zone.platform_image = 'platform-hourly'
   config.global_zone.platform_image_url = 'http://us-east.manta.joyent.com/nahamu/public/smartos/platform-hourly.iso'
 
-  config.zone.name = 'lx'
+  config.zone.name = 'lx_zone'
   config.zone.brand = 'lx'
-  config.zone.image = 'b7493690-f019-4612-958b-bab5f844283e'
+  config.zone.image = '818cc79e-ceb3-11e4-99ee-7bc8c674e754'
   config.zone.memory = 1536
   config.zone.disk_size = 5
 end
