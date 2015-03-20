@@ -17,13 +17,21 @@ gem install kitchen-vagrant
 ## Running it
 ```
 git clone https://github.com/bixu/lx_kitchen.git
+
 cd lx_kitchen
-kitchen verify ## checks the state of the test suite
+
+kitchen verify ## checks the state of tests in the suite
+
 ## make some changes (for example, add tests)
+
 kitchen verify
-## fix or improve tests/fix bugs as needed
+
+## improve tests and fix bugs as needed
+
 kitchen verify
+
 kitchen destroy ## clean up the testing environment, going back to 'zero'
+
 kitchen test ## a full end-to-end test cycle
 ```
 See documenation for the preqrequisite tools for more detail.
