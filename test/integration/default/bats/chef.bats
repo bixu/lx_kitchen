@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 @test "chef installs" {
-  run curl -sOL https://www.chef.io/chef/install.sh && sudo bash ./install.sh
+  run wget --no-clobber https://www.chef.io/chef/install.sh && sudo bash ./install.sh
   [ "$status" -eq 0 ]
 }
 
