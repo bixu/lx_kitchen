@@ -6,6 +6,6 @@
 }
 
 @test "bonnie++ executes" {
-  run bonnie -s0
+  run bonnie -s0 -u root
   [ "$status" -eq 0 ]
 }
