@@ -1,0 +1,21 @@
+---
+driver_plugin: joyent
+driver_config:
+  joyent_username: <%= ENV['SDC_ACCOUNT'] %>
+  joyent_keyfile: "<%= ENV['HOME'] %>/.ssh/id_rsa"
+  joyent_keyname: <%= ENV['SDC_KEY_ID'] %>
+  joyent_url: <%= ENV['SDC_URL'] %>
+
+platforms:
+- name: lx-ubuntu-14.04_20150320
+  driver_config:
+    joyent_image_id: 818cc79e-ceb3-11e4-99ee-7bc8c674e754
+    joyent_flavor_id: t4-standard-4G
+    username: ubuntu
+  provisioner:
+    name: chef_zero
+    sudo: true
+    require_chef_omnibus: '11.16.4'
+
+suites:
+  - name: default
