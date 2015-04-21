@@ -9,27 +9,28 @@ driver_config:
     brand: lx
 
 provisioner:
-  name: shell
-  script: test/templates/bootstrap.sh
+  name: chef_zero
+  data_path: test/shared
 
 platforms:
-# - name: lx-centos-6_20150320  ## waiting for https://github.com/joyent/centos-lx-brand-image-builder/pull/3 to be merged
-#   driver_config:
-#     zone:
-#       name: lx-ubuntu-14.04_20150320
-#       image: eb4128ec-cf12-11e4-960d-8780cec6463f
+ - name: lx-centos-6_20150320
+   driver_config:
+     zone:
+       name: lx-centos-6_20150320
+       image: a79dc83a-e3a7-11e4-bfe5-d3bb86399352
 
-# - name: lx-debian-7_20150320  ## waiting for https://github.com/joyent/debian-lx-brand-image-builder/pull/2 to be merged
-#   driver_config:
-#     zone:
-#       name: lx-debian-7_20150320
-#       image: 116deb8c-cf03-11e4-9b2d-7b1066800a6a
+ - name: lx-debian-7_20150320
+   driver_config:
+     zone:
+       name: lx-debian-7_20150320
+       image: 7d13c646-e3a7-11e4-8603-f79ddc0a5474
 
-- name: lx-ubuntu-14.04_20150320
-  driver_config:
-    zone:
-      name: lx-ubuntu-14.04_20150320
-      image: 818cc79e-ceb3-11e4-99ee-7bc8c674e754
+ - name: lx-ubuntu-14.04_20150415
+   driver_config:
+     zone:
+       name: lx-ubuntu-14.04_20150320
+       image: 430da066-e3a7-11e4-9657-332a2dbdf565
 
 suites:
   - name: default
+  #- name: applications
