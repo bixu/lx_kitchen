@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative './spec_helper'
 
 describe command('pldd'), :if => os[:family] == 'ubuntu' do
   its(:exit_status) { should eq 1 }

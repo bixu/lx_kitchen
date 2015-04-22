@@ -1,39 +1,27 @@
 ---
-driver:
-  name: vagrant
-  customize:
-    memory: 2048
-
+driver_plugin: joyent
 driver_config:
-  box: livinginthepast/smartos
-  box_url: https://atlas.hashicorp.com/livinginthepast/boxes/smartos
-  vagrantfile_erb: test/templates/Vagrantfile.smartos.erb
-  zone:
-    brand: lx
-
-provisioner:
-  name: chef_zero
-  data_path: test/shared
+  joyent_username: <%= ENV['JOYENT_USERNAME'] %>
+  joyent_keyfile: "<%= ENV['HOME'] %>/.ssh/id_rsa"
+  joyent_keyname: <%= ENV['JOYENT_KEYNAME'] %>
+  joyent_url: "https://us-east-3b.api.joyent.com"
+  joyent_flavor_id: t4-standard-4G
+  username: root
 
 platforms:
  - name: lx-centos-6_20150320
    driver_config:
-     zone:
-       name: lx-centos-6_20150320
-       image: a79dc83a-e3a7-11e4-bfe5-d3bb86399352
+     joyent_image_id: a79dc83a-e3a7-11e4-bfe5-d3bb86399352
 
  - name: lx-debian-7_20150320
    driver_config:
-     zone:
-       name: lx-debian-7_20150320
-       image: 7d13c646-e3a7-11e4-8603-f79ddc0a5474
+     joyent_image_id: 7d13c646-e3a7-11e4-8603-f79ddc0a5474
 
- - name: lx-ubuntu-14.04_20150415
+ - name: lx-ubuntu-14.04_20150320
    driver_config:
-     zone:
-       name: lx-ubuntu-14.04_20150320
-       image: 430da066-e3a7-11e4-9657-332a2dbdf565
+     joyent_image_id: 818cc79e-ceb3-11e4-99ee-7bc8c674e754
 
 suites:
+  - name: applications
   - name: default
-  #- name: applications
+  - name: joyent

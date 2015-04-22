@@ -1,20 +1,30 @@
-require_relative '../spec_helper'
+require_relative './spec_helper'
 
 # Test symlinked proc tools 
 
 describe command('pcred') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('pfiles') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('pflags') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
+end
+
+describe command('pldd'), :if => os[:family] == ['centos', 'debian'] do
+  its(:exit_status) { should eq 2 }
+  its(:stdout) { should contain('usage:') }
+end
+
+describe command('pldd'), :if => os[:family] == 'ubuntu' do
+  its(:exit_status) { should eq 1 }
+  its(:stdout) { should contain('Exactly one parameter') }
 end
 
 # Show cpu usage once for a 2 second sampling interval
@@ -24,30 +34,30 @@ end
 
 describe command('prun') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('psig') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('pstack') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('pstop') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('ptime') do
   its(:exit_status) { should eq 1 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe command('pwait') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end

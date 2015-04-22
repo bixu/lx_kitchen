@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative './spec_helper'
 
 # Test for symlinks for binaries in /native/usr/bin/
 
@@ -6,7 +6,6 @@ describe file('/usr/bin/mdb') do
   it { should be_symlink }
   it { should be_linked_to '/native/usr/bin/mdb' }
 end
-
 
 # Tests of the proc tool commands in proc_tools_spec.rb
 describe file('/usr/bin/pcred') do
@@ -22,6 +21,11 @@ end
 describe file('/usr/bin/pflags') do
   it { should be_symlink }
   it { should be_linked_to '/native/usr/bin/pflags' }
+end
+
+describe file('/usr/bin/pldd'), :if => os[:family] == ['centos', 'debian'] do
+  it { should be_symlink }
+  it { should be_linked_to '/native/usr/bin/pldd' }
 end
 
 describe file('/usr/bin/prstat') do
@@ -66,7 +70,7 @@ end
 
 describe command('truss') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('usage:') }
+  its(:stdout) { should contain('usage:') }
 end
 
 describe file('/usr/bin/kstat') do
@@ -96,7 +100,7 @@ end
 
 describe command('cpustat') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('Usage:') }
+  its(:stdout) { should contain('Usage:') }
 end
 
 describe command('cpustat -h') do
@@ -138,5 +142,5 @@ end
 
 describe command('plockstat') do
   its(:exit_status) { should eq 2 }
-  its(:stderr) { should contain('Usage:') }
+  its(:stdout) { should contain('Usage:') }
 end

@@ -1,6 +1,9 @@
 ---
 driver:
   name: vagrant
+  customize:
+    memory: 2048
+
 driver_config:
   box: livinginthepast/smartos
   box_url: https://atlas.hashicorp.com/livinginthepast/boxes/smartos
@@ -32,5 +35,6 @@ platforms:
        image: 430da066-e3a7-11e4-9657-332a2dbdf565
 
 suites:
-  - name: serverspec
-  - name: bats
+  - name: applications
+  - name: default
+  - name: joyent

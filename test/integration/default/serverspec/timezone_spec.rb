@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative './spec_helper'
 
 describe file('/etc/localtime') do
 	it { should be_file }

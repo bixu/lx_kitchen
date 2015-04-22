@@ -22,5 +22,6 @@ platforms:
      joyent_image_id: 818cc79e-ceb3-11e4-99ee-7bc8c674e754
 
 suites:
-  - name: serverspec
-  - name: bats
+  - name: applications
+  - name: default
+  - name: joyent

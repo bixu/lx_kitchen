@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative './spec_helper'
 
 describe file('/etc/apt/sources.list'), :if => os[:family] == 'ubuntu' do
 	it { should be_file }
