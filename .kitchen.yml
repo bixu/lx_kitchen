@@ -1,6 +1,9 @@
 ---
 driver:
   name: vagrant
+  customize:
+    memory: 2048
+
 driver_config:
   box: livinginthepast/smartos
   box_url: https://atlas.hashicorp.com/livinginthepast/boxes/smartos

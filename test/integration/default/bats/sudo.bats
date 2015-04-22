@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
 @test "sudo works" {
-  run sudo --version
+  run sudo -V
   [ "$status" -eq 0 ]
 }
