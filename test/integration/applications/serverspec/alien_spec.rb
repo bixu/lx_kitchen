@@ -4,6 +4,6 @@ describe command('apt-get install -y alien'), :if => os[:family] == ['debian', '
   its(:exit_status) { should eq 0 }
 end
 
-describe package('alien') do
+describe package('alien'), :if => os[:family] == ['debian', 'ubuntu'] do
   it { should be_installed }
 end
