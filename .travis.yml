@@ -1,6 +1,9 @@
 language: ruby
 rvm:
   - 2.2.1
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq virtualbox vagrant
 sudo: required
 dist: trusty
 script:
