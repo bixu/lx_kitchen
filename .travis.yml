@@ -2,6 +2,8 @@ language: ruby
 rvm:
   - 2.2.1
 before_install:
+  - echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
+  - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo apt-get update -qq
   - sudo apt-get install -qq virtualbox vagrant
 sudo: required
