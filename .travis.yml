@@ -6,7 +6,7 @@ dist: trusty
 script:
   - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' -y
   - wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq virtualbox vagrant
+  - sudo apt-get update
+  - sudo apt-get install -y virtualbox vagrant
   - bundle install
   - kitchen test --destroy=always
