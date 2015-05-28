@@ -1,13 +1,12 @@
 language: ruby
 rvm:
   - 2.2.1
-before_install:
+sudo: required
+dist: trusty
+script:
   - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' -y
   - wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo apt-get update -qq
   - sudo apt-get install -qq virtualbox vagrant
-sudo: required
-dist: trusty
-script:
   - bundle install
   - kitchen test --destroy=always
