@@ -7,6 +7,6 @@ before_install:
   - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' -y
   - wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo apt-get update
-  - sudo apt-get install -y dkms virtualbox-4.3 vagrant
+  - sudo apt-get install -y 'dkms' 'virtualbox-4.3' 'vagrant'
 script:
   - kitchen test --destroy=always
