@@ -28,8 +28,8 @@ platforms:
 - name: lx-ubuntu-14.04_20150320
   driver_config:
     zone:
-      name: lx-ubuntu-14.04_20150320
-      image: 818cc79e-ceb3-11e4-99ee-7bc8c674e754
+      name: lx-ubuntu-14.04_20150415
+      image: 430da066-e3a7-11e4-9657-332a2dbdf565
 
 suites:
   - name: default
