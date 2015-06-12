@@ -1,7 +1,7 @@
 ---
 driver_plugin: joyent
 driver_config:
-  joyent_username: yetu
+  joyent_username: yetu_testing
   joyent_keyfile: ./id_rsa
   joyent_keyname: travis_ci
   joyent_url: https://us-east-3.api.joyent.com
