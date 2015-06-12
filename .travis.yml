@@ -1,12 +1,9 @@
 language: ruby
 rvm:
-  - 2.2.1
-sudo: required
-dist: trusty
+- 2.2.1
 before_install:
-  - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' -y
-  - wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
-  - sudo apt-get update
-  - sudo apt-get install -y 'dkms' 'virtualbox-4.3' 'vagrant'
+- openssl aes-256-cbc -K $encrypted_5f6186889f46_key -iv $encrypted_5f6186889f46_iv
+  -in id_rsa.enc -out id_rsa -d
+bundler_args: "--deployment --binstubs"
 script:
-  - kitchen test --destroy=always
+- "./bin/kitchen test --destroy=always --concurrency"
