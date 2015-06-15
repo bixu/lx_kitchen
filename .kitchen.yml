@@ -1,11 +1,11 @@
 ---
 driver_plugin: joyent
 driver_config:
-  joyent_username: yetu_testing
+  joyent_username: yetu
   joyent_keyfile: ./id_rsa
   joyent_keyname: travis_ci
   joyent_url: https://us-east-3.api.joyent.com
-  joyent_flavor_id: g3-devtier-0.25-smartos
+  joyent_flavor_id: g3-highcpu-1.75-smartos
   username: root
 
 platforms:
