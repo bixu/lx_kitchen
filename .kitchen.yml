@@ -6,12 +6,17 @@ driver_config:
   joyent_keyname: travis_ci
   joyent_url: https://eu-ams-1.api.joyent.com
   joyent_flavor_id: g3-highcpu-1.75-smartos
-  username: root
 
 platforms:
+- name: ubuntu-certified-14.04_20150225.2
+  driver_config:
+    joyent_image_id: c864f104-624c-43d2-835e-b49a39709b6b
+    username: ubuntu
+
 - name: lx-ubuntu-14.04_20150601
   driver_config:
     joyent_image_id: a21a64a0-0809-11e5-a64f-ff80e8e8086f
+    username: root
 
 suites:
   - name: default
