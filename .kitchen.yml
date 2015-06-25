@@ -1,22 +1,24 @@
 ---
 driver_plugin: joyent
 driver_config:
-  joyent_username: yetu
-  joyent_keyfile: ./id_rsa
-  joyent_keyname: travis_ci
-  joyent_url: https://eu-ams-1.api.joyent.com
-  joyent_flavor_id: g3-highcpu-1.75-smartos
+  joyent_username: "<%= ENV['MANTA_USER'] %>"
+  joyent_keyfile: "<%= ENV['HOME'] %>/.ssh/id_rsa"
+  joyent_keyname: "<%= ENV['MANTA_KEY_ID'] %>"
+  joyent_url: "<%= ENV['JOYENT_API_URL'] %>"
+  joyent_flavor_id:  t4-standard-2G
 
 platforms:
-- name: ubuntu-certified-14.04_20150225.2
+- name: centos-6-20150618-smartmachine
   driver_config:
-    joyent_image_id: c864f104-624c-43d2-835e-b49a39709b6b
-    username: ubuntu
+    joyent_image_id: aa11a466-15c4-11e5-add5-0700f90a1098
 
-- name: lx-ubuntu-14.04_20150601
+- name: debian-7-20150618-smartmachine
   driver_config:
-    joyent_image_id: a21a64a0-0809-11e5-a64f-ff80e8e8086f
-    username: root
+    joyent_image_id: 1187b54a-15ca-11e5-a80c-275e2f64f91e
+
+- name: ubuntu-14.04-20150618-smartmachine
+  driver_config:
+    joyent_image_id: 5a0145ee-15c4-11e5-9c49-ef53e8760a7e
 
 suites:
   - name: default
